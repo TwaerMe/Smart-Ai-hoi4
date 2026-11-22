@@ -1,0 +1,51 @@
+# Железная Доктрина: Внутриигровое меню настройки ИИ прямо во время партии
+
+iron_doctrine_control_category = {
+	iron_doctrine_toggle_hardcore_ai = {
+		icon = generic_tank
+		cost = 0
+		available = {
+			always = yes
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = iron_doctrine_hardcore_active }
+				clr_global_flag = iron_doctrine_hardcore_active
+				every_country = {
+					limit = { is_ai = yes }
+					remove_ideas = iron_doctrine_ai_logistics_assist
+				}
+			}
+			else = {
+				set_global_flag = iron_doctrine_hardcore_active
+				every_country = {
+					limit = { is_ai = yes is_major = yes }
+					add_ideas = iron_doctrine_ai_logistics_assist
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	iron_doctrine_toggle_antilag = {
+		icon = generic_industry
+		cost = 0
+		available = {
+			always = yes
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = iron_doctrine_disable_antilag }
+				clr_global_flag = iron_doctrine_disable_antilag
+			}
+			else = {
+				set_global_flag = iron_doctrine_disable_antilag
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

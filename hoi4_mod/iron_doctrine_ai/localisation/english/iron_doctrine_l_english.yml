@@ -1,0 +1,8 @@
+﻿l_english:
+ iron_doctrine_control_category:0 "Iron Doctrine: Improved AI"
+ iron_doctrine_control_category_desc:0 "Live in-game configuration panel for Iron Doctrine Improved AI. Toggle hardcore AI supply coordination or the minor nation anti-lag limiter mid-campaign."
+ iron_doctrine_toggle_hardcore_ai:0 "Toggle Hardcore AI Logistics & Planning Assist"
+ iron_doctrine_toggle_hardcore_ai_desc:0 "Toggles a modest planning speed (+20%) and attrition reduction (-15%) modifier for major AI nations."
+ iron_doctrine_toggle_antilag:0 "Toggle Minor Nation Anti-Lag Limiter"
+ iron_doctrine_toggle_antilag_desc:0 "Prevents neutral minor nations from spamming excessive divisions in late game."
+ iron_doctrine_ai_logistics_assist:0 "AI Staff Coordination"

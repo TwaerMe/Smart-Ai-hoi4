@@ -1,0 +1,49 @@
+# Железная Доктрина: Здравый смысл на мирных конференциях (Анти-бордергор)
+# ИИ избегает случайных анклавов и предпочитает смежные провинции, корки и марионеток.
+
+peace_ai_desires = {
+	iron_doctrine_prefer_cores_and_claims = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM.FROM.FROM = {
+				OR = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+		}
+		ai_desire = 220
+	}
+
+	iron_doctrine_avoid_landlocked_bordergore = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM.FROM.FROM = {
+				NOT = { is_core_of = ROOT }
+				NOT = { is_claimed_by = ROOT }
+				is_coastal = no
+				NOT = {
+					any_neighbor_state = {
+						OR = {
+							is_owned_by = ROOT
+							pc_is_state_claimed_by = ROOT
+						}
+					}
+				}
+			}
+		}
+		ai_desire = -450
+	}
+
+	iron_doctrine_prefer_puppet_distant = {
+		peace_action_type = puppet
+		enable = {
+			ROOT = { is_major = yes }
+			ROOT.FROM.FROM.FROM = {
+				NOT = { is_core_of = ROOT }
+				NOT = { is_claimed_by = ROOT }
+			}
+		}
+		ai_desire = 95
+	}
+}

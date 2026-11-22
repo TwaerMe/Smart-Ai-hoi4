@@ -1,0 +1,104 @@
+# Железная Доктрина: Глобальная экономическая, производственная и военная логика ИИ
+
+iron_doctrine_early_civ_buildup = {
+	enable = {
+		is_major = yes
+		has_war = no
+		date < 1938.1.1
+		threat < 0.25
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 85
+	}
+}
+
+iron_doctrine_war_economy_mil_pivot = {
+	enable = {
+		OR = {
+			date > 1938.1.1
+			threat > 0.25
+			has_war = yes
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 140
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 61
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 46
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = anti_air
+		value = 2
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 3
+	}
+}
+
+iron_doctrine_stockpile_protection = {
+	enable = {
+		has_equipment = {
+			infantry_equipment < 2500
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 65
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = -100
+	}
+}
+
+iron_doctrine_coastal_port_garrison = {
+	enable = {
+		has_war = yes
+		any_controlled_state = {
+			is_coastal = yes
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = garrison
+		value = 35
+	}
+}
+
+iron_doctrine_minor_anti_lag_limiter = {
+	enable = {
+		is_major = no
+		has_war = no
+		num_of_factories < 18
+		num_divisions > 32
+		NOT = { has_global_flag = iron_doctrine_disable_antilag }
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -250
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = -300
+	}
+}

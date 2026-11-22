@@ -1,0 +1,108 @@
+# Железная Доктрина: Умные конструкторы техники (NSB Танки / BBA Авиация / MtG Флот)
+# Устраняет выпуск бесполезных бипланов с 1 пулемётом и танков с 40% надёжностью.
+
+iron_doctrine_medium_tank_design = {
+	category = land
+	roles = { land_medium_tank }
+	priority = {
+		factor = 80
+	}
+	iron_medium_breakthrough_1940 = {
+		priority = {
+			factor = 100
+		}
+		target_variant = {
+			match_value = 4000
+			type = medium_tank_chassis_1
+			modules = {
+				main_armament_slot = { any_of = { tank_medium_howitzer tank_medium_cannon_2 tank_medium_cannon } }
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_2
+				special_type_slot_2 = sloped_armor
+				special_type_slot_3 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = 6
+			}
+		}
+	}
+}
+
+iron_doctrine_meta_fighter = {
+	category = air
+	roles = { air_fighter }
+	priority = {
+		factor = 120
+	}
+	iron_fighter_hmg_1940 = {
+		priority = {
+			factor = 150
+		}
+		target_variant = {
+			match_value = 5000
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = heavy_mg_4x
+				fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = self_sealing_fuel_tanks_small
+				special_type_slot_2 = armor_plate_small
+				special_type_slot_3 = drop_tanks
+			}
+		}
+	}
+}
+
+iron_doctrine_meta_cas = {
+	category = air
+	roles = { air_cas }
+	priority = {
+		factor = 95
+	}
+	iron_cas_dive_1940 = {
+		priority = {
+			factor = 110
+		}
+		target_variant = {
+			match_value = 4200
+			type = small_plane_cas_airframe_2
+			modules = {
+				fixed_main_weapon_slot = heavy_bomb_locks
+				fixed_auxiliary_weapon_slot_1 = bomb_locks
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = dive_brakes_small
+				special_type_slot_2 = self_sealing_fuel_tanks_small
+				special_type_slot_3 = drop_tanks
+			}
+		}
+	}
+}
+
+iron_doctrine_asw_destroyer = {
+	category = naval
+	roles = { naval_screen }
+	priority = {
+		factor = 70
+	}
+	iron_dd_escort_1940 = {
+		priority = {
+			factor = 90
+		}
+		target_variant = {
+			match_value = 3000
+			type = ship_hull_light_2
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_sonar_2
+				fixed_ship_engine_slot = light_ship_engine_2
+				mid_1_custom_slot = ship_depth_charge_2
+				rear_1_custom_slot = ship_depth_charge_2
+			}
+		}
+	}
+}

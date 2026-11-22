@@ -1,0 +1,7 @@
+iron_doctrine_control_category = {
+	icon = generic_army_organization
+	priority = 95
+	visible = {
+		is_ai = no
+	}
+}

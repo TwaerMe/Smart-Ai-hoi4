@@ -1,0 +1,66 @@
+# Железная Доктрина: Танковые дивизии прорыва и моторизованные части
+# Выбранная ширина танковой дивизии: 30w (с организацией > 30)
+
+armor_iron_doctrine = {
+	role = armor
+	upgrade_prio = {
+		factor = 6.0
+		modifier = {
+			factor = 2.0
+			num_of_military_factories > 35
+		}
+	}
+	medium_armor_iron_doctrine = {
+		upgrade_prio = {
+			factor = 6
+		}
+		target_width = 30
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		target_template = {
+			support = {
+				engineer = 1
+				logistics_company = 1
+				anti_air = 1
+				maintenance_company = 1
+				artillery = 1
+			}
+			regiments = {
+				medium_armor = 8
+				motorized = 7
+			}
+		}
+		replace_at_match = 0.4
+		replace_with = medium_armor_iron_doctrine
+		target_min_match = 0.5
+	}
+}
+
+mobile_iron_doctrine = {
+	role = mobile
+	upgrade_prio = {
+		factor = 3.5
+	}
+	motorized_exploit_iron_doctrine = {
+		upgrade_prio = {
+			factor = 4
+		}
+		target_width = 18
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				logistics_company = 1
+			}
+			regiments = {
+				motorized = 9
+			}
+		}
+		replace_at_match = 0.4
+		replace_with = motorized_exploit_iron_doctrine
+		target_min_match = 0.5
+	}
+}

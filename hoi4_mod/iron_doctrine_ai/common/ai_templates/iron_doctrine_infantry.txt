@@ -1,0 +1,110 @@
+# Железная Доктрина: Мета-шаблоны пехоты, гарнизонов и горнострелков
+# Выбранная ширина линейной пехоты: 18w
+
+infantry_iron_doctrine = {
+	role = infantry
+	upgrade_prio = {
+		factor = 4.0
+	}
+	line_infantry_iron_doctrine = {
+		upgrade_prio = {
+			factor = 5
+		}
+		target_width = 18
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		replace_at_match = 0.4
+		replace_with = line_infantry_iron_doctrine
+		target_min_match = 0.5
+	}
+	shock_infantry_iron_doctrine = {
+		upgrade_prio = {
+			factor = 3
+		}
+		target_width = 27
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				recon = 1
+				logistics_company = 1
+			}
+			regiments = {
+				infantry = 9
+				artillery_brigade = 3
+			}
+		}
+		replace_at_match = 0.4
+		replace_with = shock_infantry_iron_doctrine
+		target_min_match = 0.5
+	}
+}
+
+garrison_iron_doctrine = {
+	role = garrison
+	upgrade_prio = {
+		factor = 3.0
+	}
+	coastal_garrison_iron_doctrine = {
+		upgrade_prio = {
+			factor = 4
+		}
+		target_width = 10
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		target_template = {
+			support = {
+				engineer = 1
+			}
+			regiments = {
+				infantry = 5
+			}
+		}
+		replace_at_match = 0.4
+		replace_with = coastal_garrison_iron_doctrine
+		target_min_match = 0.5
+	}
+}
+
+mountaineers_iron_doctrine = {
+	role = mountaineers
+	upgrade_prio = {
+		factor = 3.5
+	}
+	mountaineers_iron_doctrine = {
+		upgrade_prio = {
+			factor = 4
+		}
+		target_width = 25
+		width_weight = 3.0
+		column_swap_factor = 0.5
+		target_template = {
+			support = {
+				engineer = 1
+				artillery = 1
+				anti_air = 1
+				logistics_company = 1
+			}
+			regiments = {
+				mountaineers = 8
+				artillery_brigade = 3
+			}
+		}
+		replace_at_match = 0.4
+		replace_with = mountaineers_iron_doctrine
+		target_min_match = 0.5
+	}
+}
